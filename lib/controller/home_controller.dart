@@ -47,26 +47,7 @@ class QuoteController extends GetxController {
     final wishlistJson = wishlist.map((quote) => quote.toJson()).toList();
     await prefs.setString('wishlist', jsonEncode(wishlistJson));
   }
-  //
-  // Future<void> loadWishlist() async {
-  //   final prefs = await SharedPreferences.getInstance();
-  //   final wishlistString = prefs.getString('wishlist');
-  //   if (wishlistString != null) {
-  //     final wishlistData = jsonDecode(wishlistString) as List;
-  //     wishlist(wishlistData.map((json) => QuoteModel.fromJson(json)).toList());
-  //   }
-  // }
-  //
-  // void removeFromWishlist(int index) {
-  //   wishlist.removeAt(index);
-  //   saveWishlist();
-  // }
-  //
-  // void addToWishlist(QuoteModel quote) {
-  //   wishlist.add(quote);
-  //   saveWishlist();
-  // }
-  //
+
   Future<void> fetchQuotes() async {
     final url = Uri.parse('https://dummyjson.com/quotes');
     try {

@@ -11,7 +11,14 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Quotes',style: GoogleFonts.raleway(),),
+
+      appBar: AppBar(
+        centerTitle: true,
+        title:
+        Text('Quotes',
+          style: GoogleFonts.raleway(),
+        
+        ),
         actions: [
           IconButton(
               onPressed: () {
@@ -57,18 +64,23 @@ class HomeScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(item.quote ?? "",),
-                              SizedBox(height: 10,),
-                              Text("- ${item.author ?? ""}"),
-                            ],
+                          child: Card(
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(item.quote ?? "",),
+                                  SizedBox(height: 10,),
+                                  Text("- ${item.author ?? ""}"),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
-                        SizedBox(width: 20,),
-                        Icon(Icons.arrow_forward_ios,size: 20,)
+
+
                       ],
                     ),
                   ),

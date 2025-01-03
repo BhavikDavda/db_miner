@@ -28,7 +28,8 @@ class _DetailPageState extends State<DetailPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Quotes Detail', ),
+        centerTitle: true,
+        title: Text('Details',style: GoogleFonts.raleway(), ),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 8.0),
@@ -46,18 +47,23 @@ class _DetailPageState extends State<DetailPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              args.quote ?? "",style: GoogleFonts.raleway(),
-              textAlign: TextAlign.center,
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  args.quote ?? "",style: GoogleFonts.raleway(),
+                  textAlign: TextAlign.center,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  "- ${args.author}",style: GoogleFonts.raleway(),
+                ),
+              ],
             ),
-            SizedBox(height: 10),
-            Text(
-              "- ${args.author}",style: GoogleFonts.raleway(),
-            ),
-          ],
+          ),
         ),
       ),
     );
